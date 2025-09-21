@@ -16,31 +16,36 @@ An AI-powered email assistant that generates contextual, professional replies us
 
 ## Tech Stack
 
-| Layer        | Technologies                        |
-|-------------|--------------------------------------|
-| Frontend    | React.js, HTML, CSS                  |
-| Backend     | Java, Spring Boot                    |
-| AI API      | Gemini API (Google AI)               |
-| Extension   | JavaScript (Gmail DOM manipulation)  |
-| Tools       | Git, GitHub, REST APIs, VS Code      |
+| Layer        | Technologies                         |
+|--------------|------------------------------------|
+| Frontend     | React.js, HTML, CSS                 |
+| Backend      | Java, Spring Boot                   |
+| AI API       | Gemini API (Google AI)              |
+| Extension    | JavaScript (Gmail DOM manipulation)|
+| Tools        | Git, GitHub, REST APIs, VS Code    |
 
 ---
 
 ## Architecture Overview
 
+![Smart Email Reply Assistant](src/main/resources/static/AI-Email-Assistant.jpeg)
+
 1. **Frontend**
-   - Provides a user-friendly UI with input fields and a tone selection dropdown
-   - Displays AI-generated replies with an option to edit before copying or sending
+    - Provides a user-friendly UI with input fields and a tone selection dropdown
+    - Displays AI-generated replies with an option to edit before copying or sending
+    - **Static assets including images are located in:**  
+      `src/main/resources/static`  
+      Example image: `AI-Email-Assistant.png`
 
 2. **Backend**
-   - Accepts email content and tone/style preference via REST API
-   - Processes the request and communicates with the Gemini API
-   - Returns a generated response based on the given context and tone
+    - Accepts email content and tone/style preference via REST API
+    - Processes the request and communicates with the Gemini API
+    - Returns a generated response based on the given context and tone
 
 3. **Browser Extension**
-   - Integrates into Gmail UI
-   - Captures email content and passes it to the backend
-   - Inserts AI-generated reply directly into the email editor
+    - Integrates into Gmail UI
+    - Captures email content and passes it to the backend
+    - Inserts AI-generated reply directly into the email editor
 
 ---
 
@@ -60,13 +65,5 @@ An AI-powered email assistant that generates contextual, professional replies us
 3. Click the "Generate with AI" button
 4. AI-generated reply will appear in the message box
 5. Make edits if needed and send
-
----
-
-## Future Improvements
-
-- Voice input support for composing replies
-- Multi-language support
-- Inline grammar and tone suggestions
 
 ---
