@@ -73,11 +73,24 @@ public class EmailServiceImp implements EmailService {
 
     private String buildPrompt(EmailReqDto emailReqDto) {
         StringBuilder prompt = new StringBuilder();
-        prompt.append("Generate a professional email reply for the following email content");
-        if (emailReqDto.getTone() != null && !emailReqDto.getTone().isEmpty()){
-            prompt.append("Use a ").append(emailReqDto.getTone()).append("tone");
-            prompt.append("\n Original Email: \n").append(emailReqDto.getEmailContent());
+
+        prompt.append("Generate a professional email reply using the provided context and raw reply.");
+
+        if (emailReqDto.getTone() != null && !emailReqDto.getTone().isEmpty()) {
+            prompt.append(" Use a ").append(emailReqDto.getTone()).append(" tone.");
         }
+
+        prompt.append("\n\nOriginal Email:\n")
+                .append(emailReqDto.getEmailContent());
+
+        prompt.append("\n\nRaw Reply:\n")
+                .append(emailReqDto.getRawReply());
+
+        prompt.append("\n\nInstructions:\n")
+                .append("- Use the Raw Reply to generate a polished and professional response.\n")
+                .append("- Do not include any explanations or commentary, only the improved reply.\n");
+
         return prompt.toString();
     }
+
 }
